@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="E:\ME\kuaijia\MyRongyun\IMKit\src\main\libs"><file name="Rong_IMKit.jar" path="E:\ME\kuaijia\MyRongyun\IMKit\src\main\libs\Rong_IMKit.jar"/></source></dataSet><dataSet config="release"><source path="E:\ME\kuaijia\MyRongyun\IMKit\src\release\jniLibs"/></dataSet></merger>

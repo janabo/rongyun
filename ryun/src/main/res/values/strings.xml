@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Ryun</string>
+    <string name="rootUrl">http://localhost:8192/</string>
+
+</resources>
