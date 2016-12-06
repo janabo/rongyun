@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyIm</string>
+    <string name="nullUid">帐号不能为空</string>
+    <string name="nullPsw">密码不能为空</string>
+</resources>

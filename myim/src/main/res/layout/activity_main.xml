@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#f4f4f4"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/putview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <RelativeLayout
+            android:id="@+id/top"
+            android:layout_width="fill_parent"
+            android:layout_height="48dip"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical" >
+            <Button
+                android:id="@+id/back"
+                android:layout_width="70dip"
+                android:layout_height="48dip"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="8dip"
+                android:text="返回"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                android:background="@drawable/button_back1"
+                android:gravity="center_vertical|center_horizontal" />
+            <TextView
+                android:id="@+id/title"
+                style="@style/login_title_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="48dip"
+                android:text="管理员"
+                android:layout_centerHorizontal="true"
+                android:textColor="#ffffff" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- ListView用于显示聊天界面的内容，divider属性指明ListView的分隔线的颜色为透明 -->
+    <ListView
+        android:id="@+id/msg_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="#0000" >
+    </ListView>
+
+    <View
+        android:layout_height="0.8dp"
+        android:layout_width="match_parent"
+        android:background="#c9c9c9"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/input_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="在这里发送消息"
+            android:maxLines="2" />
+        <Button
+            android:id="@+id/send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发送" />
+    </LinearLayout>
+</LinearLayout>
