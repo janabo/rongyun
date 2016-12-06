@@ -1,12 +1,15 @@
 package com.janabo.myim;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -44,9 +47,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         x.view().inject(this);
         helper = new CoreSharedPreferencesHelper(this);
-        msgPoll();
+        msgPoll();//定时器
         adapter = new MsgAdapter(MainActivity.this, R.layout.activity_msg_item, msgList);
         msgListView.setAdapter(adapter);
+
+        msgListView.setOnTouchListener(new View.OnTouchListener() {
+            @SuppressLint("ClickableViewAccessibility")
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                if(imm.isActive()){
+                    imm.hideSoftInputFromWindow(msgListView.getWindowToken(), 0);
+                }
+                return false;
+            }
+        });
     }
 
     public void msgPoll(){
@@ -84,15 +99,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
     private void initMsgs() {
-//        Msg msg1 = new Msg("你好，家伙！", Msg.TYPE_RECEIVED);
-//        msgList.add(msg1);
-//        Msg msg2 = new Msg("你好，你是谁？", Msg.TYPE_SENT);
-//        msgList.add(msg2);
-//        Msg msg3 = new Msg("我是汤姆，很高兴认识你。", Msg.TYPE_RECEIVED);
-//        msgList.add(msg3);
-//        Msg msg4 = new Msg("我是杰克，也很高兴认识你。", Msg.TYPE_SENT);
-//        msgList.add(msg4);
 
         Map<String,String> map = new HashMap<>();
         map.put("gustid",helper.getValue("mguestid"));
@@ -104,10 +112,11 @@ public class MainActivity extends AppCompatActivity {
                 msg.setType(Msg.TYPE_RECEIVED);
                 msgList.add(msg);
                 adapter.notifyDataSetChanged(); // 当有新消息时刷新ListView
+                msgListView.setSelection(msgList.size());
             }
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-                Toast.makeText(mContext,"接收失败",Toast.LENGTH_SHORT).show();
+//                Toast.makeText(mContext,"接收失败",Toast.LENGTH_SHORT).show();
             }
             @Override
             public void onCancelled(CancelledException cex) {
@@ -140,11 +149,11 @@ public class MainActivity extends AppCompatActivity {
         HttpClientUtil.doPost("http://sit99srv.huaruntong.cn/onlinechat/hprongyun.asmx/SendMessage", map, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
-                Toast.makeText(mContext,"发送成功",Toast.LENGTH_SHORT).show();
+//                Toast.makeText(mContext,"发送成功",Toast.LENGTH_SHORT).show();
             }
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-                Toast.makeText(mContext,"发送失败",Toast.LENGTH_SHORT).show();
+//                Toast.makeText(mContext,"发送失败",Toast.LENGTH_SHORT).show();
             }
             @Override
             public void onCancelled(CancelledException cex) {
@@ -159,6 +168,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void exitApp() {
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        if(imm.isActive()){
+            imm.hideSoftInputFromWindow(msgListView.getWindowToken(), 0);
+        }
         android.support.v7.app.AlertDialog.Builder alertDialog = new android.support.v7.app.AlertDialog.Builder(mContext);
         alertDialog.setMessage("您确定退出聊天?")
                 .setPositiveButton("取消",new DialogInterface.OnClickListener() {

@@ -39,6 +39,11 @@
                 android:textColor="#ffffff" />
         </RelativeLayout>
     </LinearLayout>
+    <LinearLayout
+        android:focusable="true" android:focusableInTouchMode="true"
+        android:layout_width="0px" android:layout_height="0px">
+        <requestFocus />
+    </LinearLayout>
 
     <!-- ListView用于显示聊天界面的内容，divider属性指明ListView的分隔线的颜色为透明 -->
     <ListView

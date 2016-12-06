@@ -25,53 +25,53 @@
                 android:textColor="#ffffff" />
         </RelativeLayout>
 
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/uid"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:hint="输入账号"
-            android:textColor="#000000"
-            app:met_floatingLabel="highlight"
-            app:met_primaryColor="#2196F3"
-            app:met_textColor="#000000"
-            app:met_errorColor="@android:color/holo_red_dark"
-            app:met_underlineColor="#003587"
-            app:met_floatingLabelTextColor="#2196F3"
-            app:met_singleLineEllipsis="true"
-            app:met_iconLeft="@mipmap/uid"
-            app:met_iconPadding="0dp"
-            app:met_clearButton="true">
-        </com.rengwuxian.materialedittext.MaterialEditText>
+        <!--<com.rengwuxian.materialedittext.MaterialEditText-->
+            <!--android:id="@+id/uid"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="14sp"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:layout_marginRight="20dp"-->
+            <!--android:hint="输入账号"-->
+            <!--android:textColor="#000000"-->
+            <!--app:met_floatingLabel="highlight"-->
+            <!--app:met_primaryColor="#2196F3"-->
+            <!--app:met_textColor="#000000"-->
+            <!--app:met_errorColor="@android:color/holo_red_dark"-->
+            <!--app:met_underlineColor="#003587"-->
+            <!--app:met_floatingLabelTextColor="#2196F3"-->
+            <!--app:met_singleLineEllipsis="true"-->
+            <!--app:met_iconLeft="@mipmap/uid"-->
+            <!--app:met_iconPadding="0dp"-->
+            <!--app:met_clearButton="true">-->
+        <!--</com.rengwuxian.materialedittext.MaterialEditText>-->
 
 
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/psw"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:hint="输入密码"
-            android:inputType="textPassword"
-            android:textColor="#000000"
-            app:met_floatingLabel="highlight"
-            app:met_primaryColor="#2196F3"
-            app:met_textColor="#000000"
-            app:met_errorColor="@android:color/holo_red_dark"
-            app:met_underlineColor="#003587"
-            app:met_floatingLabelTextColor="#2196F3"
-            app:met_singleLineEllipsis="true"
-            app:met_iconLeft="@mipmap/pwd"
-            app:met_iconPadding="0dp"
-            app:met_clearButton="true">
-        </com.rengwuxian.materialedittext.MaterialEditText>
+        <!--<com.rengwuxian.materialedittext.MaterialEditText-->
+            <!--android:id="@+id/psw"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textSize="14sp"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_marginRight="20dp"-->
+            <!--android:hint="输入密码"-->
+            <!--android:inputType="textPassword"-->
+            <!--android:textColor="#000000"-->
+            <!--app:met_floatingLabel="highlight"-->
+            <!--app:met_primaryColor="#2196F3"-->
+            <!--app:met_textColor="#000000"-->
+            <!--app:met_errorColor="@android:color/holo_red_dark"-->
+            <!--app:met_underlineColor="#003587"-->
+            <!--app:met_floatingLabelTextColor="#2196F3"-->
+            <!--app:met_singleLineEllipsis="true"-->
+            <!--app:met_iconLeft="@mipmap/pwd"-->
+            <!--app:met_iconPadding="0dp"-->
+            <!--app:met_clearButton="true">-->
+        <!--</com.rengwuxian.materialedittext.MaterialEditText>-->
 
 
         <LinearLayout
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dip"
             android:layout_marginRight="10dip"
@@ -80,11 +80,10 @@
 
             <Button
                 android:id="@+id/ok"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="42dip"
-                android:layout_weight="1"
                 android:background="@drawable/ripple_bg"
-                android:text="确定"
+                android:text="登录聊天室"
                 android:textColor="#ffffff"
                 android:textSize="14sp"
                 android:elevation="3dp"/>
